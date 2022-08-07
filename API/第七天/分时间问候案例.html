@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            margin-left: 38%;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 38%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        小平同志上午好!
+    </div>
+    <img src="images/s.gif" alt="">
+
+
+    <script>
+        var div = document.querySelector('div');
+        var img = document.querySelector('img');
+        var date = new Date();
+        var h = date.getHours();
+        if(h>0&&h<8){
+            div.innerHTML='小平同志早上好';
+            img.src='images/z.gif';
+        }
+        else if (h >= 8 && h <= 12) {
+            div.innerHTML = '小平同志上午好';
+            img.src = 'images/s.gif';
+        }
+        else if(h>12&&h<=18){
+            div.innerHTML='小平同志下午好';
+            img.src='images/x.gif';
+        }
+        else if(h>18&&h<=23){
+            div.innerHTML='小平同志晚上好';
+            img.src='images/w.gif';
+        }
+    </script>
+
+</body>
+
+</html>

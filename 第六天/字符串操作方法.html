@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //substr(开始位置，取几个)
+        var arr = '12345';
+        console.log(arr.substr(2, 2));//索引号2开始，取2个
+
+
+        //替换字符 replace('被替换字符','替换为')
+        var str = 'andy';
+        console.log(str.replace('a', 'bac'));//只替换第一个相关的字符
+
+        //把字符串里的o替换为*
+        var arr2 = 'abcoefoxyozzopp';
+        while (arr2.indexOf('o') !== -1) {
+            arr2 = arr2.replace('o', '*');
+        }
+        console.log(arr2);
+
+
+        //字符转换数组split('分隔符')  join把数组转换为字符串
+        //分隔符写字符串的分隔符，取决于字符串是用什么隔开
+        var arr3 = 'red,greed,pink';
+        console.log(arr3.split(','));
+        var arr4='red&greed&pink';
+        console.log(arr4.split('&'));
+
+
+        //转换为大写 toUpperCase()
+        //方法将调用该方法的字符串转为大写形式并返回（如果调用该方法的值不是字符串类型会被强制转换）
+        //返回值为一个新的字符串
+        var str='red,greed,pink';
+        console.log(str.toUpperCase());
+        console.log(str);//不影响原数组
+
+
+        //转换为小写 toLowerCase()
+        //会将调用该方法的字符串值转为小写形式，并返回。
+        var str2='RED,GREED,PINK';
+        console.log(str2.toLowerCase());
+        console.log(str2);//不影响原数组
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

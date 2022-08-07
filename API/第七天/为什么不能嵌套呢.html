@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <p>下午好</p>
+        <img src="images/s.gif" alt="">
+    </div>
+
+    <script>
+        var box = document.getElementById('box');
+        var p = box.getElementsByTagName('p');
+        var img = box.getElementsByTagName('img');
+        var date = new Date();
+        var h = date.getHours();
+        console.log(h);
+        console.log(p);
+        if (h >= 8 && h <= 12) {
+            p.innerHTML = '的萨瓦';
+        }
+    </script>
+</body>
+
+</html>

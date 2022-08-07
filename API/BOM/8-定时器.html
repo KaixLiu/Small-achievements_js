@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定时器   setTimeout()回调函数
+        //window.setTimeout(调用函数,[延迟的毫秒数]);当延时毫秒数到了之后才会调用函数,调用一次不再调用
+        //window在调用时可以省略
+        //延时时间单位是毫秒，省略默认是0
+        //调用函数可以直接写函数，也可以写函数名
+        //页面中可能有很多定时器，我们给他们加标识符
+        setTimeout(function(){
+
+        },2000);
+        //第二种写法
+        function fn(){
+            alert('吃饭啦');
+        }
+        setTimeout(fn,2000);
+        setTimeout('fn()',2000);//这种写法不推荐
+
+        //加名字
+        var time1=setTimeout(fn,2000);
+        var time2=setTimeout(fn,3055);
+    </script>
+</body>
+</html>

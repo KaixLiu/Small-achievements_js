@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        
+        .change {
+            background-color: purple;
+            color: #fff;
+            font-size: 25px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">文本</div>
+    <script>
+        //如果样式比较少功能简单用element.style更方便
+        var test=document.querySelector('div');
+        test.onclick=function(){
+            //element.className 用于样式多或者功能复杂
+            //this.className='change';让当前元素类名改为change赋值覆盖
+            this.className='first change';//保留原先类目 多类名选择器
+        }
+    </script>
+</body>
+</html>

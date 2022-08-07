@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 1000px;
+            margin: 100px auto;
+        }
+        li {
+            list-style: none;
+            float: left;
+        }
+        .box-hd {
+            height: 40px;
+            border: 1px solid #eefeee;
+        }
+        .box-hd ul {
+            height: 40px;
+            background-color: #eef1ee;
+        }
+        .box-hd ul li {
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .sp {
+            background-color: #d6271f;
+            color: #fff;
+        }
+        .item {
+            display: none;
+        }
+        .bgc {
+            background-color: '';
+            color: #000;
+        }
+        .xs {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-hd">
+            <ul>
+                <li class="sp">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（5000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="box-bd">
+            <div class="item" style="display: block;">商品介绍模块内容</div>
+            <div class="item">规格包装模块内容</div>
+            <div class="item">售后保障模块内容</div>
+            <div class="item">商品评价模块</div>
+            <div class="item">手机社区</div>
+        </div>
+    </div>
+
+    <script>
+        //1、点击其他时，其他按钮样式回归从前
+        var btn=document.querySelector('ul').querySelectorAll('li');
+        var items=document.querySelectorAll('.item');
+        for(var i=0;i<btn.length;i++){
+            //开始给5个li设置索引号
+            btn[i].setAttribute('index',i);
+            btn[i].onclick=function(){
+                for(var i=0;i<btn.length;i++){
+                    btn[i].className='bgc';
+                }
+                this.className='sp';
+
+                //显示模板
+                var index= this.getAttribute('index');//获取下标
+                for(var i=0;i<items.length;i++){
+                    items[i].style.display='none';
+                }
+                items[index].style.display='block';
+            }
+        }
+
+        //点击不同按钮，切换不同内容
+
+    </script>
+</body>
+</html>

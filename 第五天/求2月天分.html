@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function stor(year) {
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+                fn1();
+            }
+            else{
+                fn2();
+            }
+        }
+        function fn1(){
+            alert("2月是29天");
+        }
+        function fn2(){
+            alert("2月是28天");
+        }
+
+        var num=prompt("请输入年份，将判断出2月份天数");
+        stor(num);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

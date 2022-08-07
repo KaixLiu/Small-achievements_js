@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .mm {
+            display: inline-block;
+            font-size: 16px;
+            color: #000;
+            padding-right: 10px;
+        }
+
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(images/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+        /* 错误 */
+        .wrong {
+            color: red;
+            background-image: url(images/wrong.png);
+        }
+        /* 正确 */
+        .right {
+            color: green;
+            background-image: url(images/right.png);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p class="mm">*设置密码</p>
+        <input type="password">
+        <p class="message">请输入6~16位数密码</p>
+    </div>
+    <script>
+        var btn = document.querySelector('input');
+        var message = document.querySelector('.message');
+        btn.onblur = function () {
+            if (this.value.length < 6 ) {
+                message.className='message wrong';//调用错误图标类名
+                message.innerHTML='您输入的位数小于6位';
+            }else if(this.value.length>16) {
+                message.className='message wrong';
+                message.innerHTML='您输入的位数超过16位';
+            }else {
+                message.className='message right';//调用正确图标类名
+                message.innerHTML='密码格式正确';
+            }
+        }
+    </script>
+</body>
+
+</html>

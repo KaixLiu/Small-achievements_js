@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="ks">开启定时器</button>
+    <button class="js">关闭定时器</button>
+    <script>
+        window.addEventListener('load', function () {
+            var ks = document.querySelector('.ks');
+            var js = document.querySelector('.js');
+            var times = null;//全局变量 一个空对象
+            ks.addEventListener('click', function () {
+                times = setInterval(function () {
+                    console.log('开始了哦');
+                }, 1000)
+            })
+            js.addEventListener('click', function () {
+                clearInterval(times);
+            })
+        })
+    </script>
+</body>
+
+</html>

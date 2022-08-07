@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        var ul=document.querySelector('ul');
+        //node.cloneNode():  括号里为空或者false 为浅拷贝,只拷贝属性，不拷贝内容
+        var lili=ul.children[0].cloneNode();
+        ul.appendChild(lili);//放在最后
+        //node.cloneNode(true); 括号里是tur 为深拷贝，属性与内容都拷贝
+        var lili=ul.children[0].cloneNode(true);
+        ul.appendChild(lili);
+    </script>
+</body>
+</html>

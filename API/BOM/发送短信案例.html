@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number">
+    <button>发送</button>
+    <script>
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('button');
+            var i = 5;
+            var times = null;
+            btn.addEventListener('click', function () {
+                this.disabled = true;
+                times = setInterval(function () {
+                    if (i == 0) {
+                        clearInterval(times);
+                        btn.disabled = false;
+                        btn.innerHTML = '发送';
+                        i = 5;//变回原来的按钮时，把倒计时再次刷新
+                    }
+                    else {
+                        btn.innerHTML = '还剩余' + i + '秒可再发送';
+                        i--;
+                    }
+                }, 1000)
+            })
+        })
+    </script>
+</body>
+
+</html>

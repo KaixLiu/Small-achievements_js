@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function PC(color, weight, logo, age) {
+            this.color = color;
+            this.weight = weight;
+            this.logo = logo;
+            this.age = age;
+            this.LookMove = function (look) {
+                console.log(look);
+            }
+            this.music = function (sang) {
+                console.log(sang);
+            }
+            this.Play = function (game) {
+                console.log(game);
+            }
+            this.vscode = function (vs) {
+                console.log(vs);
+            }
+        }
+
+        var dn = new PC('黑色', '268克', '宏基', 'al515');
+        console.log(dn.color);
+        console.log(dn['age']);
+        dn.LookMove('看电影'); 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

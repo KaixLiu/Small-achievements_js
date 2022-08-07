@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .ht {
+            position: relative;
+            width: 500px;
+            height: 50px;
+            cursor: move;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="ht">来拖动我呀</div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var box = document.querySelector('.box');
+            var ht = document.querySelector('.ht');
+            ht.addEventListener('mousedown', function (e) {
+                var x = e.pageX - box.offsetLeft;
+                var y = e.pageY - box.offsetTop;
+                console.log(x);
+                
+                document.addEventListener('mousemove', move);
+                function move(e) {
+                    box.style.left = e.pageX - x + 'px';
+                    box.style.top = e.pageY - y + 'px';
+                }
+                document.addEventListener('mouseup',function(){
+                    document.removeEventListener('mousemove',move);
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

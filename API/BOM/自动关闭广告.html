@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            position: absolute;
+            top: -3px;
+            left: 118px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        window.addEventListener('load', function () {
+            var div=document.querySelector('div');
+            var img = document.querySelector('img');
+            var btn=document.querySelector('a');
+            
+            btn.addEventListener('click',function(){
+                div.style.display='none';
+            })
+            setTimeout(fn,5000);
+            function fn(){
+                div.style.display='none';
+            }
+            
+        })
+    </script>
+    <div>
+        <img src="images/ad.jpg" alt="">
+        <a href="javascript:;">X</a>
+    </div>
+</body>
+
+</html>

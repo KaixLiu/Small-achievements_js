@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.box {
+    position: relative;
+    width: 800px;
+    height: 450px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+.imgul {
+    width: 600%;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+.imgul li {
+    float: left;
+}
+.imgul li img {
+    width: 800px;
+}
+
+.prev,
+.next {
+    display: none;
+    color: #fff;
+    width: 17px;
+    height: 30px;
+    line-height: 30px;
+    background: rgba(170, 0, 0, 0.7);
+}
+
+.prev {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.nav {
+    width: 140px;
+    height: 25px;
+    position: absolute;
+    border-radius: 5px;
+    bottom: 10px;
+    left: 10px;
+}
+.nav li {
+    float: left;
+    margin: 5px 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.nav .select {
+    background-color: red;
+}

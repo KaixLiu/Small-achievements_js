@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+    <script>
+        //1、获取所以按钮元素
+        var btn = document.getElementsByTagName('button');
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onclick = function () {
+                //把所以按钮颜色去掉
+                for(var i=0;i<btn.length;i++){
+                    btn[i].style.backgroundColor='';
+                }
+                //设置当前背景颜色
+                this.style.backgroundColor = 'pink';
+            }
+        }
+
+        //首先排除其他，然后才设置自己的样式，排他思想
+    </script>
+</body>
+
+</html>

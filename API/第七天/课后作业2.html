@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            margin: 0 auto;
+            width: 1000px;
+            background-color: pink;
+        }
+        .box p {
+            text-align: center;
+            font-size: 60px;
+        }
+        .box .btn {
+            position: absolute;
+            top: -3px;
+            right: 0px;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>我是一个大广告</p> 
+        <label for="" class="btn">x</label>
+    </div>
+
+    <script>
+        var btn=document.querySelector('.btn');
+        var box =document.querySelector('.box');
+        btn.onclick=function(){
+            box.style.display='none';
+        }
+    </script>
+</body>
+</html>

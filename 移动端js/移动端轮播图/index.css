@@ -1,0 +1,40 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+.box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.imgul {
+    width: 500%;
+    margin-left: -100%;
+}
+.imgul li {
+    float: left;
+    width: 20%;
+}
+.imgul img {
+    width: 100%;
+}
+
+.nav {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 5px;
+}
+.nav li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    background-color: #fff;
+}
+.nav .select {
+    width: 15px;
+}

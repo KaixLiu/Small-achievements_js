@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Star(uname,lx,xue) {
+            this.uname=uname;
+            this.lx=lx;
+            this.xue=xue;
+            this.gjfs=function(gj){
+                console.log(gj);
+            }
+        }
+        var lp=new Star('廉颇','力量型',500);
+        console.log(lp.uname);
+        console.log(lp.lx);
+        console.log(lp.xue);
+        lp.gjfs('近战');
+        var hy=new Star('后裔','射手型',100);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

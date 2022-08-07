@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>我是li1</li>
+        <li>我是li2</li>
+        <li>我是li3</li>
+        <li>我是li4</li>
+    </ol>
+    <script>
+        var ol =document.querySelector('ol');
+        // console.log(ol.children);
+        //firstchild获取的是第一个子节点（换行，文本节点）
+        console.log(ol.firstChild);
+        //lastchild 获取最后一个子节点
+        console.log(ol.lastChild);
+
+
+        //兼容性问题  i9以上
+        //firstElementChild 获取第一个元素节点 
+        console.log(ol.firstElementChild);
+
+        console.log(ol.lastElementChild);
+
+
+        //实际开发写法，没有兼容性问题还可以返回
+        console.log(ol.children[0]);
+        //ol的子元素长度减一
+        console.log(ol.children[ol.children.length-1]);
+    </script>
+</body>
+</html>

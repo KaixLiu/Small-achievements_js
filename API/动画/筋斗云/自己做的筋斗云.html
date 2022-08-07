@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #000;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .box {
+            position: relative;
+            text-align: center;
+            line-height: 45px;
+            border-radius: 5px;
+            width: 800px;
+            height: 45px;
+            background: #fff url(images/rss.png) no-repeat right center;
+            margin: 60px auto;
+        }
+
+        .nav {
+            position: absolute;
+            z-index: 999;
+        }
+
+        .nav li {
+            list-style: none;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .img {
+            float: right;
+            margin-top: 5px;
+        }
+
+        .yun {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            width: 83px;
+            height: 42px;
+            background: url(images/cloud.gif) no-repeat;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <span class="yun">
+
+        </span>
+        <ul class="nav">
+            <li>
+                <a href="javascript:;">首页新闻</a>
+            </li>
+            <li>
+                <a href="javascript:;">师资力量</a>
+            </li>
+            <li>
+                <a href="javascript:;">活动策划</a>
+            </li>
+            <li>
+                <a href="javascript:;">企业文化</a>
+            </li>
+            <li>
+                <a href="javascript:;">招聘信息</a>
+            </li>
+            <li>
+                <a href="javascript:;">公司简洁</a>
+            </li>
+            <li>
+                <a href="javascript:;">我是佩奇</a>
+            </li>
+            <li>
+                <a href="javascript:;">哈是佩奇</a>
+            </li>
+        </ul>
+    </div>
+    <script src="animate.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            var yun = document.querySelector('.yun');
+            var box = document.querySelector('.box');
+            var nav = document.querySelector('.nav');
+            var lis = nav.querySelectorAll('li');
+            var num=0;
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseover', function () {
+                    animate(yun,this.offsetLeft);
+                })
+                lis[i].addEventListener('mouseout',function(){
+                    animate(yun,num);
+                })
+                lis[i].addEventListener('click',function(){
+                    num=this.offsetLeft;
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

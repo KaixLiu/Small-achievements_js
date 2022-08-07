@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(Math.abs(1));
+        console.log(Math.abs(-1));
+        console.log(Math.abs('-1'));//隐式转换  会把字符型-1转换为数字型
+        console.log(Math.abs('是多少'));//NaN
+
+        //向下取整 直接砍小数点后
+        console.log(Math.floor(1.6));//地板
+
+        //向上取整   
+        console.log(Math.ceil(1.1));//天花板
+
+
+        //四舍五入   其他数字正常，5特殊，往大取
+        console.log(Math.round(1.6));
+        console.log(Math.round(1.2));
+        console.log(Math.round(-1.5));//-1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function utime(arr) {
+            while (true) {
+                var who = prompt('你的字符串为：' + arr + '\n你要进行什么操作' + '\n1、求字符串长度' + '\n2、取出指定位置字符' + '\n3、查找某字符是否存在字符串中' + '\n4、替换指定字符' + '\n5、截取指定开始位置到结束位置字符' + '\n6、找出出现次数最多的字符和出现次数');
+
+                switch (who) {
+                    case '1':
+                        alert('它的长度是：' + arr.length);
+                        break;
+                    case '2':
+                        var num1 = prompt(+arr + '\n你需要取出哪个位置');
+                        alert('在位置' + num1 + '是' + arr.charAt(num1));
+                        break;
+                    case '3':
+                        var num2 = prompt(+arr + '\n你需要判断哪个字符呢？');
+                        if (arr.indexOf(num2) !== -1) {//indexOf不能跟变量
+                            alert('有该字符');
+                        }
+                        else {
+                            alert('无');
+                        }
+                        break;
+                    case '4':
+                        var num3 = prompt(+arr + '\n你需要替换哪个字符?');
+                        var num4 = prompt(+arr + '\n替换为：');
+                        while (arr.indexOf(num3) !== -1) {
+                            arr = arr.replace(num3, num4);
+                        }
+                        alert(arr);
+                        break;
+                    case '5':
+                        var num5 = prompt(+arr + '\n你要截取的开始位置是：');
+                        var num6 = prompt(+arr + '\n你要截取的结束位置是：');
+                        alert(arr.substr(num5, num6));
+                        break;
+                    case '6':
+                        var o = {};
+                        for (var i = 0; i < arr.length; i++) {
+                            var chars = arr.charAt(i);
+                            if (o[chars]) {
+                                o[chars]++;
+                            }
+                            else {
+                                o[chars] = 1;
+                            }
+                        }
+                        var max = 0;
+                        var ch = '';
+                        for (var k in o) {
+                            if (o[k] > max) {
+                                max = o[k];//返回属性值
+                                ch = k;//返回属性名
+                            }
+                        }
+                        alert('出现最多的是：' + ch + '\n次数有：' + max + '次');
+                        break;
+                }
+            }
+        }
+        while (true) {
+            var num = prompt("请输入字符串");
+            utime(num);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav {
+            margin: 100px;
+        }
+
+        .nav>li {
+            position: relative;
+            text-align: center;
+            float: left;
+            width: 80px;
+            height: 41px;
+
+        }
+
+        .nav li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 41px;
+            color: #333;
+        }
+
+        .nav>li>a:hover {
+            background-color: #eee;
+        }
+
+        .nav ul {
+            display: none;
+            position: absolute;
+            top: 41px;
+            left: 0;
+            width: 100%;
+            border-left: 1px solid #eecc5b;
+            border-right: 1px solid #fecc5b;
+        }
+
+        .nav ul li {
+            border-bottom: 1px solid #fecc5b;
+        }
+
+        .nav ul li a:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">博客</a>
+            <ul>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">邮箱</a>
+            <ul>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+                <li>
+                    <a href="#">私刑</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var nav = document.querySelector('.nav');
+        var lis = nav.children;
+        for (var i = 0; i < lis.length; i++) {
+            //经过
+            lis[i].onmouseover = function () {
+                this.children[1].style.display = 'block';
+            }
+            //离开
+            lis[i].onmouseout = function () {
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

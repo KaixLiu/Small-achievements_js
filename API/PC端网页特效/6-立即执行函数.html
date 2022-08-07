@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // (function() {})()  或者 (function(){}());
+        (function () {
+            console.log(2);
+        })();
+
+
+        (function (num, i) {
+            console.log(num + i);
+        })(10, 5);//可以看作调用函数可以传参
+
+
+        (function (a, b) {
+            console.log(a + b);
+        }(2, 3))
+        //立即执行函数最大的作业是独立创建了一个作用域，里面的变量都是局部变量，不会冲突
+        
+    </script>
+</body>
+
+</html>

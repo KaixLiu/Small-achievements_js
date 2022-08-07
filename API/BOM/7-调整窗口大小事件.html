@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: pink;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        window.addEventListener('load', function () {
+            var div = document.querySelector('div');
+            //窗口调整大小window.onresize
+            window.addEventListener('resize', function () {
+                console.log(window.innerWidth);
+                if (window.innerWidth <= 1000) {
+                    //不能读取style是因为script在div上面，所以要加window.load
+                    
+                    div.style.width = '100px';
+                }
+                else {
+                    div.style.display='none';
+                }
+            })
+        })
+    </script>
+    <div></div>
+</body>
+
+</html>

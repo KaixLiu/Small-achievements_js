@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style: none;
+        }
+        .qwe {
+            display: none;
+            
+        }
+        .asd {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <ul>
+            <p class="btn">微博 ^</p>
+            <li class="qwe">私刑</li>
+            <li class="qwe">私刑</li>
+            <li class="qwe">私刑</li>
+        </ul>
+    </div>
+    <script>
+        var btn = document.querySelector('.btn');
+        console.log(btn);
+        var lis = document.querySelectorAll('li');
+        console.log(lis);
+        btn.onclick = function () {
+            // lis.style.display='block';
+            lis.className='asd';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        .hd {
+            padding-bottom: 30px;
+        }
+
+        .hd h1 {
+            font-size: 20px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .bd-1,
+        .bd-2 {
+            position: relative;
+            margin: 30px auto;
+            width: 1000px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .bd-1 input {
+            width: 970px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .bd-2 input {
+            width: 920px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .bd-2 img {
+            position: absolute;
+            top: 3px;
+            right: 80px;
+            width: 24px;
+        }
+
+        .bd-2 i {
+            color: #ccc;
+            margin-bottom: 2px;
+        }
+
+        .bd-2 a {
+            font-size: 14px;
+        }
+
+        .bd-3 {
+            width: 1000px;
+            height: 40px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 15px;
+            color: #fff;
+            background-color: #ffbcb0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box w">
+        <div class="hd">
+            <h1>京东登录</h1>
+        </div>
+        <div class="bd-1">
+            <input type="text" placeholder="请输入账号">
+
+        </div>
+        <div class="bd-2">
+            <label for="">
+                <img src="../images/close.png" alt="" id="eye">
+            </label>
+            <input type="password" class="mm" id="pwd" placeholder="请输入密码"><i>|</i>
+            <a href="#">忘记密码</a>
+        </div>
+        <div class="bd-3">
+            登录
+        </div>
+
+    </div>
+    <script>
+        var eye = document.getElementById('eye'); 
+        var pwd = document.getElementById('pwd');
+        var flag = 0;
+        eye.onclick = function () {
+            if (flag == 0) {
+                pwd.type = 'text';
+                this.src = '../images/open.png';
+                flag=1;
+            }
+            else {
+                pwd.type='password';
+                this.src='../images/close.png';
+                flag=0;
+            }
+        }
+    </script>
+</body>
+
+</html>

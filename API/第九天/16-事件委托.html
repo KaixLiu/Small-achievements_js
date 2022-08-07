@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>我来啦啦啦啦啦啦啦啦啦啦</li>
+        <li>我来啦啦啦啦啦啦啦啦啦啦</li>
+        <li>我来啦啦啦啦啦啦啦啦啦啦</li>
+        <li>我来啦啦啦啦啦啦啦啦啦啦</li>
+        <li>我来啦啦啦啦啦啦啦啦啦啦</li>
+        <li>我来啦啦啦啦啦啦啦啦啦啦</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul');
+        var li = document.querySelector('li');
+        ul.addEventListener('click', fn);
+        // function fn(e){
+        //     // alert('lalllllllllllllllllllll');
+        //     // e.target 这个可以点击我们的对象
+        //     e.target.style.backgroundColor='pink';
+        // }
+
+        function fn(e) {
+            for (var i = 0; i < ul.children.length; i++) {
+                this.children[i].style.backgroundColor = '';
+            }
+            e.target.style.backgroundColor = 'pink';
+        }
+    </script>
+</body>
+
+</html>

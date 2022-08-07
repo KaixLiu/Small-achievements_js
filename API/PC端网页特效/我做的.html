@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 22px;
+        }
+
+        .box {
+            display: none;
+            width: 600px;
+            height: 300px;
+            position: fixed;
+            border: #ebebeb solid 1px;
+            top: 50%;
+            left: 50%;
+            background: #ffffff;
+            box-shadow: 0px 0px 20px #ddd;
+            z-index: 999;
+            transform: translate(-50%, -50%);
+        }
+
+        .txt {
+            width: 100%;
+            margin: 10px 0 0 0;
+            text-align: center;
+            line-height: 60px;
+            height: 60px;
+            font-size: 30px;
+            position: relative;
+            cursor: move;
+        }
+
+        .ipt,
+        .ipt-bd {
+            height: 60px;
+            text-align: center;
+        }
+
+        .ipt label,
+        .ipt-bd label {
+            font-size: 22px;
+        }
+
+        .ipt input,
+        .ipt-bd input {
+            width: 415px;
+            height: 35px;
+        }
+
+        .ipt-bd {
+            margin-right: 20px;
+        }
+
+        .root {
+            margin: 0 auto;
+            width: 200px;
+            height: 50px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 45px;
+            border: 1px solid #ccc;
+        }
+
+        .root a {
+            display: block;
+            width: 200px;
+            height: 50px;
+        }
+
+        .gb {
+            position: absolute;
+            top: -30px;
+            right: -32px;
+            width: 50px;
+            height: 50px;
+            border-radius: 28px;
+            background-color: #fff;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .bjzz {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background: rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <a href="javascript:;" class="dj">点击，弹出登录框</a>
+    </div>
+    <div class="box">
+        <div class="txt">登录会员</div>
+        <div class="login">
+            <div class="ipt">
+                <label>用户名：</label>
+                <input type="text" placeholder="请输入账号">
+            </div>
+            <div class="ipt-bd">
+                <label>登录密码：</label>
+                <input type="password" placeholder="请输入密码">
+            </div>
+        </div>
+        <div class="root"><a href="javascript:;">登录会员</a></div>
+        <div class="gb">
+            <a href="javascript:;">关闭</a>
+        </div>
+    </div>
+    <div class="bjzz"></div>
+    <script>
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('.dj');
+            var box = document.querySelector('.box');
+            var bj = document.querySelector('.bjzz');
+            var gb = document.querySelector('.gb');
+            var txt = document.querySelector('.txt');
+            btn.addEventListener('click', function () {
+                box.style.display = 'block';
+                bj.style.display = 'block';
+            })
+            gb.addEventListener('click', function () {
+                box.style.display = 'none';
+                bj.style.display = 'none';
+            })
+
+
+            //拖拽效果
+            txt .addEventListener('mousedown', function (e) {
+                var x = e.pageX - box.offsetLeft;
+                var y = e.pageY - box.offsetTop;
+                //鼠标移动，把鼠标在页面中的坐标减去鼠标在模态框中的坐标
+                document.addEventListener('mousemove', move);
+                function move(e) {
+                    box.style.left = e.pageX - x + 'px';
+                    box.style.top = e.pageY - y + 'px';
+                }
+                document.addEventListener('mouseup',function(){
+                    document.removeEventListener('mousemove',move);
+                })
+                
+            })
+        })
+    </script>
+</body>
+
+</html>

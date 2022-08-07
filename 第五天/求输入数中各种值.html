@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fn() {
+            var arr = [];
+            var max = 0;
+            var min = arguments[0];
+            var sum = 0;
+            var ave = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+                if (min > arguments[i]) {
+                    min = arguments[i];
+                }
+            }
+            console.log('最大值：' + max);
+            console.log('最小值：' + min);
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+                ave = sum / arguments.length;
+            }
+            console.log(sum);
+            console.log(ave);
+        }
+        fn(5, 9, 6, 4, 8, 2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

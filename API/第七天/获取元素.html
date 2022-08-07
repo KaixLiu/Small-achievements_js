@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //获取页面元素可以使用以下几种方式
+        //1、根据ID获取
+        //getElementByld()
+        //返回一个匹配特定 ID的元素。由于元素的 ID 在大部分情况下要求是独一无二的，这个方法自然而然地成为了一个高效查找特定元素的方法。
+
+        //2、根据标签名获取
+        //3、通过HTML5新增的方法获取
+        //4、特殊元素获取
+
+    </script>
+</head>
+<body>
+    <div id="time">
+        2019-55
+    </div>
+    <script>
+        //1、因为文档页面从上往下加载，所以先得标签，script写下面
+        //2、get 获取  element 元素  by 通过
+        //3、id是大小敏感的 字符串，所以要加 ''
+        var timer=document.getElementById('time');
+        console.log(timer);
+        //返回一个匹配到 ID 的 DOM Element 对象。若在当前 Document 下没有找到，则返回 null。
+        console.log(typeof timer);
+        //打印返回元素对象方法
+        console.dir(timer);
+    </script>
+</body>
+</html>

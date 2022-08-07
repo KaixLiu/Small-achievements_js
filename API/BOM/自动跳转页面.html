@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            position: relative;
+            width: 900px;
+            height: 500px;
+            margin: 100px auto;
+            margin-left: 600px;
+        }
+
+        input {
+            position: absolute;
+            top: 200px;
+            left: 75px;
+            width: 500px;
+            height: 40px;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+            border: 1px solid aqua;
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .ss {
+            position: absolute;
+            top: 200px;
+            right: 250px;
+            float: right;
+            width: 70px;
+            height: 44px;
+            background-color: aqua;
+            text-align: center;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .ss a {
+
+            line-height: 40px;
+        }
+
+        .txt {
+            position: absolute;
+            left: 80px;
+            top: 247px;
+            border-radius: 5px;
+            width: 576px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+            color: #fff;
+            background-color: #000;
+        }
+
+        p {
+            position: absolute;
+            top: 120px;
+            left: 267px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <strong>抱歉您需要启用javascript才能正常访问本站【you need to enable javascript】</strong>
+    </noscript>
+    <div class="box">
+        <input type="text">
+        <div class="ss">
+            <a href="javascript:;">搜索</a>
+        </div>
+        <p>886高速搜索引擎</p>
+        <div class="txt" style="display: none;"></div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var btn = document.querySelector('.ss');
+            var txt = document.querySelector('.txt');
+            var i = 5;//定义倒数时间
+            var times = null;//先设置计时器为空
+            btn.addEventListener('click', function () {
+                txt.style.display = 'block';//显示提示框
+                fn();
+                setInterval(fn, 1000);
+                function fn() {
+                    if (i == 0) {
+                        clearInterval(times);
+                        txt.style.display = 'none';
+                        location.href = 'http://www.baidu.cn';//跳转页面
+                        i = 5;//重新计时
+                    }
+                    else {
+                        txt.innerHTML = '暂时还没有开通查找功能' + i + '秒后将自动跳转百度';
+                        i--;
+                    }
+                }
+
+            })
+        })
+    </script>
+</body>
+
+</html>

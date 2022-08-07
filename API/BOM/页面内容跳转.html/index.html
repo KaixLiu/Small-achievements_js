@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //思路
+        //先用location.search获取？uname=xxx
+        //再用substr来去除？
+        //最后用split来分隔字符让他们变成数组，注意这里分隔用的是=号
+        window.addEventListener('load', function () {
+            // console.log(location.search);
+            //substr('起始位置',窃取的字符)
+            var par = location.search.substr(1);
+            //split('=');
+            var arr = par.split('=');
+            console.log(arr);
+            var div = document.querySelector('div');
+            div.innerHTML = arr[1] + '欢迎你';
+        })
+    </script>
+</body>
+
+</html>

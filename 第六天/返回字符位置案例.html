@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr1 = 'abcoefoxyozzopp';
+        for (var i = 0; i < arr1.length; i++) {
+            if (arr1.indexOf('o', i) != -1) {
+                console.log(arr1.indexOf('o', i));
+            }
+        }
+
+
+
+        var index = arr1.indexOf('o');
+        var num = 0;
+        while (index !== -1) {
+            console.log(index);
+            num++;
+            index = arr1.indexOf('o', index + 1);
+        }
+        console.log('次数是：' + num);
+
+
+
+        
+        function hhh(arr2) {
+            var num2 = 0;
+            var Red = arr2.indexOf('red');
+            while (Red !== -1) {
+                console.log(Red);
+                num2++;
+                Red = arr2.indexOf('red', Red + 1);
+            }
+            console.log('次数为：' + num2);
+        }
+
+        hhh(['red', 'greed', 'red', 'blue', 'pink', 'red']);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

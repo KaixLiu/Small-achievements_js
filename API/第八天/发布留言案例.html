@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .box ul {
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 300px;
+            margin: 20px auto;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            outline: none;
+            /* 限时用户不可拉伸文本框大小 */
+            resize: none;
+        }
+
+        button {
+            margin-bottom: 2px;
+        }
+
+        li a {
+            text-decoration: none;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <textarea></textarea>
+        <button>发布</button>
+        <ul>
+
+        </ul>
+    </div>
+    <script>
+        var btn = document.querySelector('button');
+        console.log(btn);
+        var txt = document.querySelector('textarea');
+        var ul = document.querySelector('ul');
+        btn.onclick = function () {
+            if (txt.value == '') {
+                alert('您什么都没有输入哦');
+            }
+            else {
+                var lis = document.createElement('li');
+                lis.innerHTML = txt.value + "<a href='javascript:;'>删除</a>";
+
+                ul.insertBefore(lis, ul.children[0]);
+                //删除元素
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function () {
+                        //node.removeChild(child); 
+                        //删除的是li   当前a所在的li  this.parentNode;
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var i, j, k, sum = 0, ave = 0;
+        var num = prompt("请输入学生人数");
+        for (i = 1; i <= num; i++) {
+            j = prompt("请输入第" + i + "个学生成绩");
+            sum+=parseFloat(j);
+        }
+        ave=sum/num;
+        alert("班级成绩的总和是："+sum+"\n班级成绩的平均值是："+ave);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

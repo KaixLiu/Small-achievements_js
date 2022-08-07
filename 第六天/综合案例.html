@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr1 = 'abaasdffggghhjjkkgfddsssss3444343';
+        console.log('字符串的长度是：' + arr1.length);//求字符串长度
+
+        console.log(arr1.charAt(3));//取出指定位置的字符
+
+        if (arr1.indexOf('i') !== -1) {//判断有无该字符
+            console.log('有该字符');
+        }
+        else {
+            console.log('无该字符');
+        }
+
+        while (arr1.indexOf('g') !== -1) {//替换指定字符
+            arr1 = arr1.replace('g', '22');
+        }
+        console.log(arr1);
+
+        console.log(arr1.substr(0,5));//取得1-5字符串
+
+        var o={};
+        for(var i=0;i<arr1.length;i++){
+            var chars=arr1.charAt(i);
+            if(o[chars]){
+                o[chars]++;
+            }
+            else {
+                o[chars]=1;
+            }
+        }
+        var max=0;
+        var ch='';
+        for(var k in o){
+            if(o[k]>max){
+                max=o[k];//返回属性值
+                ch=k;//返回属性名
+            }
+        }
+        console.log(arr1);
+        console.log(max);
+        console.log(ch);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

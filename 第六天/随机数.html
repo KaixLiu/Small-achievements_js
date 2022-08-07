@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Math.random() 函数返回一个浮点数， 伪随机数在范围从0 到小于1，也就是说，从 0（包括 0）往上，但是不包括 1（排除 1），然后您可以缩放到所需的范围。实现将初始种子选择到随机数生成算法;它不能被用户选择或重置。
+        console.log(Math.random());
+
+        //两个数之间随机整数
+        // return Math.floor(Math.random() * (max - min + 1)) + min; 
+        // function get(min,max){
+        //     min=Math.ceil(min);
+        //     max=Math.floor(max);
+        //     return Math.floor(Math.random()*(max-min+1))+min;
+        // }
+        function get(min,max){
+            min=Math.ceil(min);
+            max=Math.floor(max);
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+        console.log(get(1,10));
+
+        var arr=['的撒d的撒','的撒','的味道','对方可能'];
+        console.log(arr[get(1,arr.length-1)]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

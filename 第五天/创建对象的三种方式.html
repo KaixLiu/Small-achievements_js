@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1、对象字面量
+        //var obj={}; //创建了一个空的对象
+        var obj = {
+            uname: '闪电',
+            age: 18,
+            sex: '男',
+            sayhi: function () {
+                console.log('hi');
+            }
+        }
+        //使用对象 对象名.属性名
+        console.log(obj.uname);
+        //调用属性还有一钟方法 对象名['属性名']
+        console.log(obj['age']);     
+        //调用对象的方法 对象名.方法名()
+        obj.sayhi();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

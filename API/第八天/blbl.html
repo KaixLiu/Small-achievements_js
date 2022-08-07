@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* 清除浮动 */
+        .clearfix:after {
+            visibility: hidden;
+            clear: both;
+            display: block;
+            content: ".";
+            height: 0
+        }
+
+        body {
+            background-color: #ccc;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .box {
+            position: relative;
+            background-color: #ffffff;
+            width: 350px;
+            height: 40px;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        .box .search {
+            position: absolute;
+            top: 4px;
+            width: 310px;
+            height: 30px;
+            margin-left: 10px;
+            border-radius: 5px;
+            background-color: #e3e5e7;
+        }
+
+        .box .search input {
+            border: 0;
+            float: left;
+            border-radius: 5px;
+            margin-left: 11px;
+            width: 300px;
+            height: 30px;
+            background-color: #e3e5e7;
+            outline: none;
+        }
+
+        .search a {
+            position: absolute;
+            top: -1px;
+            right: -27px;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: url(images/topbar.png) no-repeat 0px -99px;
+        }
+
+        .box .bd {
+            position: absolute;
+            background-color: #fff;
+            width: 350px;
+            top: 38px;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .box .hd li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin: 0 auto;
+        }
+
+        .box .hd .ss {
+            width: 350px;
+            margin-top: 12px;
+        }
+
+        .box .hd .ss h1 {
+            float: left;
+            font-size: 16px;
+            width: 65px;
+            margin-left: 15px;
+            font-weight: 400;
+        }
+
+        .box .hd .ss a {
+            float: right;
+            display: block;
+            width: 33px;
+            margin-right: 6px;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .box .hd ul {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .box .hd ul p {
+            float: left;
+            font-size: 12px;
+            display: block;
+            max-width: 300px;
+            background-color: #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="search">
+            <input type="text" placeholder="这次，给UNI-V讲营销方案！" id="ipt">
+            <a href="javascript:;" id="btn"></a>
+        </div>
+        <div class="bd" style="display: none;">
+            <div class="hd">
+                <div class="ss clearfix">
+                    <h1>搜索历史</h1>
+                    <a href="javascript:;" class="qk">清空</a>
+                </div>
+                <ul>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        //获取input和bd
+        var ipt = document.getElementById('ipt');
+        var divs = document.querySelector('.bd');
+        var btn = document.getElementById('btn');
+        var qk=divs.querySelector('a');
+        var ul = divs.querySelector('ul');
+        var hd=document.querySelector('.hd');
+        console.log(hd);
+        //添加点击动作
+        ipt.onclick = function () {
+            divs.style.display = 'block';
+        }
+        //添加鼠标离开操作
+        divs.onblue = function () {
+            divs.style.display = 'none';
+        }
+
+        //搜索内容时，保存记录
+
+        btn.onclick = function () {
+            var lis = document.createElement('p');
+            lis.innerHTML = ipt.value;
+            ul.insertBefore(lis, ul.children[0]);
+            hd.style.display='block';
+        }
+        //清空
+        qk.onclick=function(){
+            ul.removeChild(ul.children[0]);
+            hd.style.display='none';
+        }
+        console.log(qk);
+    </script>
+</body>
+
+</html>
